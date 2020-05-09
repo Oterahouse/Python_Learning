@@ -1,6 +1,5 @@
-import statistics as stat
+import cubed
 
-nums =[1,  5, 33, 12, 46, 33, 2]
-pstdev = stat.pstdev(nums)
+x = cubed.cubed(3)
 
-print(pstdev)
+print(x)
