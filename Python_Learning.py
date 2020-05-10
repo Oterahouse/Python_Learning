@@ -1,5 +1,2 @@
-import cubed
-
-x = cubed.cubed(3)
-
-print(x)
+with open("st.txt", "w") as f:
+    f.write("Hi from Python")
