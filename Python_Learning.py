@@ -1,9 +1,10 @@
-class Orange:
-    def __init__(self, w, c):
-        self.weight = w
-        self.color = c
-        print("Created!")
+class Hexagon:
+    def __init__(self, p):
+        self.perimeter = p
 
-orl = Orange(10, "dark orange")
-print(orl.weight)
-print(orl.color)
+    def calcurete_perimeter(self):
+        return self.perimeter * 6
+
+
+hex = Hexagon(3)
+print(hex.calcurete_perimeter())
