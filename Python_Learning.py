@@ -1,10 +1,10 @@
-class Hexagon:
-    def __init__(self, p):
-        self.perimeter = p
+class PublicPrivateExample:
+    def __init__(self):
+        self.public = "safe"
+        self._unsatfe = "unsafe"
 
-    def calcurete_perimeter(self):
-        return self.perimeter * 6
+    def public_method(self):
+        pass
 
-
-hex = Hexagon(3)
-print(hex.calcurete_perimeter())
+    def _unsafe_method(self):
+        pass
