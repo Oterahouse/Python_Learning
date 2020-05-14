@@ -1,17 +1,15 @@
-class Shape:
-    def __init__(self, w, l):
-        self.width = w
-        self.len = l
+class Dog:
+    def __init__(self, name, breed, owner):
+        self.name = name
+        self.breed = breed
+        self.owner = owner
 
-    def print_size(self):
-        print("{} by {}".format(self.width, self.len))
+class Person:
+    def __init__(self, name):
+        self.name = name
 
-class Square(Shape):
-    def area(self):
-        return self.width * self.len
 
-    def print_size(self):
-        print("I am {} by {}".format(self.width, self.len))
-
-a_square = Square(20, 20)
-a_square.print_size()
+#Dog オブジェクト作成時に犬の飼い主としてPersonオブジェクトを渡す
+mick = Person("Mick Jagger")
+stan = Dog("Stanly", "Bulldog", mick)
+print(stan.owner.name)
