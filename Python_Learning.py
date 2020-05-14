@@ -1,10 +1,13 @@
-class PublicPrivateExample:
-    def __init__(self):
-        self.public = "safe"
-        self._unsatfe = "unsafe"
+class Shape:
+    def __init__(self, w, l):
+        self.width = w
+        self.len = l
 
-    def public_method(self):
-        pass
+    def print_size(self):
+        print("{} by {}".format(self.width, self.len))
 
-    def _unsafe_method(self):
-        pass
+class Square(Shape):
+    pass
+
+a_square = Square(20, 20)
+a_square.print_size()
