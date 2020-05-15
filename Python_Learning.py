@@ -1,15 +1,23 @@
-class Dog:
-    def __init__(self, name, breed, owner):
-        self.name = name
-        self.breed = breed
-        self.owner = owner
+class Rectangle:
+    def __init__(self, a1, a2, a3, a4):
+        self.a1 = a1
+        self.a2 = a2
+        self.a3 = a3
+        self.a4 = a4
 
-class Person:
-    def __init__(self, name):
-        self.name = name
+    def calculate_perimeter(self):
+        return self.a1 + self.a2 + self.a3 + self.a4
 
 
-#Dog オブジェクト作成時に犬の飼い主としてPersonオブジェクトを渡す
-mick = Person("Mick Jagger")
-stan = Dog("Stanly", "Bulldog", mick)
-print(stan.owner.name)
+class Square:
+    def __init__(self, b1, b2):
+        self.b1 = b1
+        self.b2 = b2
+
+    def calculate_perimeter(self):
+        return self.b1 * 2 + self.b2 * 2
+
+r = Rectangle(1, 2, 3, 4)
+print(r.calculate_perimeter())
+s = Square(1, 2)
+print(s.calculate_perimeter())
