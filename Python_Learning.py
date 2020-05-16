@@ -1,14 +1,16 @@
-class Horse:
-    def __init__(self, name, owner):
-        self.name = name
-        self.owner = owner
+class Rectangle:
+    recs = []
 
-class Rider:
-    def __init__(self, name):
-        self.name = name
+    def __init__(self, w, l):
+        self.width = w
+        self.len = l
+        self.recs.append((self.width, self.len))
 
+    def print_size(self):
+        print("{} by {}".format(self.width, self.len))
 
-rider = Rider("Michel")
-horse = Horse("UMA", rider)
+r1 = Rectangle(10, 24)
+r2 = Rectangle(20, 40)
+r3 = Rectangle(100, 200)
 
-print(horse.owner.name)
+print(Rectangle.recs)
