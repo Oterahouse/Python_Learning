@@ -1,16 +1,12 @@
-class Rectangle:
-    recs = []
+class Square:
+    square_list = []
 
-    def __init__(self, w, l):
-        self.width = w
-        self.len = l
-        self.recs.append((self.width, self.len))
+    def __init__(self, number):
+        self.number = number
+        self.square_list.append(self.number)
 
-    def print_size(self):
-        print("{} by {}".format(self.width, self.len))
+s1 = Square(1)
+s2 = Square(2)
+s3 = Square(3)
 
-r1 = Rectangle(10, 24)
-r2 = Rectangle(20, 40)
-r3 = Rectangle(100, 200)
-
-print(Rectangle.recs)
+print(Square.square_list)
