@@ -1,12 +1,45 @@
-class Square:
-    square_list = []
+class Card:
+    suits = ["spades", "hearts", "diamonds", "clubs"]
 
-    def __init__(self, number):
-        self.number = number
-        self.square_list.append(self.number)
+    values = [None, None,
+              "2", "3", "4", "5", "6", "7", "8", "9",
+              "10", "Jack", "Queen", "King", "Ace"]
 
-s1 = Square(1)
-s2 = Square(2)
-s3 = Square(3)
+    def __init__(self, v, s):
+        self.value = v
+        self.suit = s
 
-print(Square.square_list)
+    def __lt__(self, c2):
+        if self.value < c2.value:
+            return True
+
+        if self.value == c2.value:
+            if self.suit < c2.suit:
+                return True
+            else:
+                return False
+
+        return False
+
+    def __gt__(self, c2):
+        if self.value > c2.value:
+            return True
+
+        if self.value == c2.value:
+            if self.suit > c2.suit:
+                return True
+
+            else:
+                return False
+        return False
+
+    def __repr__(self):
+        v = self.values[self.value] + "of" \
+            + self.suits[self.suit]
+
+        return
+
+card1 = Card(10, 2)
+card2 = Card(11, 3)
+
+print(card1 < card2)
