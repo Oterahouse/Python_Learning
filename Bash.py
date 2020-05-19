@@ -8,3 +8,22 @@ text = """キリンは大昔から　__複数名詞__ の興味の対象でし�
 """
 
 def mad_libs(mls):
+    """
+    :param mls:文字列で、ユーザーに入力してもらいたい単語（=ヒント）
+    の部分は後を２つのアンダースコアで挟んでください。
+    ヒントの単語にはアンダースコアを含めないでください。__hint_hint__
+    はダメです。 __hint__ はOKです。
+    """
+    hints = re.findall("__.*?__", mls)
+    if hints is not None:
+        for word in hints:
+            q = "{} を入力：".format(word)
+            new = input(q)
+            mls = mls.replace(word, new, 1)
+        print('\n')
+        mls = mls.replace("\n", "")
+        print(mls)
+    else:
+        print("引数mslが無効です")
+
+mad_libs(text)
