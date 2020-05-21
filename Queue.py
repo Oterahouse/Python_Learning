@@ -1,3 +1,6 @@
+import time
+import random
+
 class Queue:
     def __init__(self):
         self.items = []
@@ -14,16 +17,25 @@ class Queue:
     def size(self):
         return len(self.items)
 
-a_queue = Queue()
-print(a_queue.is_empty())
+def simulate_line(till_show, max_time):
+    pq = Queue()
+    tix_sold = []
 
-for i in range(5):
-    a_queue.enqueue(i)
+    for i in range(100):
+        pq.enqueue("person" + str(i))
 
-print(a_queue.size())
+    t_end = time.time() + till_show
+    now = time.time()
 
-while a_queue.size():
-    print(a_queue.dequeue())
+    while now < t_end and not pq.is_empty():
+        now = time.time()
+        r = random.randint(0, max_time)
+        time.sleep(r)
+        person = pq.dequeue()
+        print(person)
+        tix_sold.append(person)
 
-print()
-print(a_queue.size())
+    return tix_sold
+
+sold = simulate_line(5, 1)
+print(sold)
