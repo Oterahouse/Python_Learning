@@ -19,13 +19,12 @@ class Stack:
         return len(self.items)
 
 stack = Stack()
-stack.push(1)
-item = stack.pop()
-print(item)
-print(stack.is_empty())
+for c in "Hello":
+    stack.push(c)
 
-for i in range(0, 6):
-    stack.push(i)
+reverse = ""
 
-print(stack.peek())
-print(stack.size())
+while stack.size():
+    reverse += stack.pop()
+
+print(reverse)
