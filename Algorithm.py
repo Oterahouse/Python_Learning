@@ -1,25 +1,21 @@
-from collections import Counter
-from collections import defaultdict
+def bottles_of_beer(bob):
+    """Prints Bottle of Berr on the wall lyrics.
 
-def count_characters(string):
-    count_dict= {}
-    for c in string:
-        if c in count_dict:
-            count_dict[c] += 1
-        else:
-            count_dict[c] = 1
+    :param bob: Must be a positive integer.
+    """
 
-    print(count_dict)
+    if bob < 1:
+        print("""No more bottles of beer on the wall.
+                No more bottles of beer.""")
+        return
 
-def count_defaultdict(string):
-    count_defaultdict = defaultdict(int)
-    for C in string:
-        count_defaultdict[C] += 1
+    tmp = bob
+    bob -= 1
+    print("""{} bottles of beer on the wall.
+        {} bottles of beer.
+        Take one down, pass it around,
+        {} bottles of beer on the wall.
+        """.format(tmp, tmp, bob))
+    bottles_of_beer(bob)
 
-    print(count_defaultdict)
-
-count_characters("Dynasty")
-
-count_defaultdict("Dynasty")
-
-print(Counter("Dynasty"))
+bottles_of_beer(99)
